@@ -1,0 +1,20 @@
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\Pix Chaves Leatoria e Fixa.exe
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\Pix Chaves Leatoria e Fixa.pdb
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\Pix Chaves Leatoria e Fixa.xml
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\EntityFramework.dll
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\System.Data.SQLite.dll
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\System.Data.SQLite.pdb
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\System.Data.SQLite.EF6.pdb
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\System.Data.SQLite.Linq.pdb
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix_Chaves_Leatoria_e_Fixa.Adicionar.resources
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix_Chaves_Leatoria_e_Fixa.Resources.resources
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix_Chaves_Leatoria_e_Fixa.Pix.resources
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix Chaves Leatoria e Fixa.vbproj.GenerateResource.Cache
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix Chaves Leatoria e Fixa.exe
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix Chaves Leatoria e Fixa.xml
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix Chaves Leatoria e Fixa.pdb
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\bin\Debug\MessagingToolkit.QRCode.dll
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix Chaves Leatoria e Fixa.vbprojResolveAssemblyReference.cache
+C:\Users\Romulo Meirelles\documents\visual studio 2010\Projects\Pix Chaves Leatoria e Fixa\Pix Chaves Leatoria e Fixa\obj\x86\Debug\Pix_Chaves_Leatoria_e_Fixa.Information.resources

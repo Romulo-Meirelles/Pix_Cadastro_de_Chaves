@@ -1,0 +1,80 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PixChavesLeatoriaeFixa
+</name>
+</assembly>
+<members>
+<member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources._1006106">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.add_key_24px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.BTC_24x24">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Close">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.DogeCoin_24x24">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Ethereum_24x24">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.information_24px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.LTC_24x24">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Minimize">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_24x24">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_275x99">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_480_370">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.remove_key_24px">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>
