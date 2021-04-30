@@ -39,9 +39,11 @@ Partial Class Pix
         Me.Adicionar_btn = New System.Windows.Forms.Button()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Panel_Principal = New System.Windows.Forms.Panel()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Banco = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.Nome = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Chave = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Panel_Mensagem = New System.Windows.Forms.Panel()
         Me.Mensagem_lbl = New System.Windows.Forms.Label()
@@ -67,7 +69,7 @@ Partial Class Pix
         Me.Superior_Panel.Dock = System.Windows.Forms.DockStyle.Top
         Me.Superior_Panel.Location = New System.Drawing.Point(0, 0)
         Me.Superior_Panel.Name = "Superior_Panel"
-        Me.Superior_Panel.Size = New System.Drawing.Size(750, 30)
+        Me.Superior_Panel.Size = New System.Drawing.Size(800, 30)
         Me.Superior_Panel.TabIndex = 0
         '
         'Title_Label
@@ -83,9 +85,10 @@ Partial Class Pix
         '
         'Minimize_Pic
         '
+        Me.Minimize_Pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Minimize_Pic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Minimize_Pic.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Minimize
-        Me.Minimize_Pic.Location = New System.Drawing.Point(684, 3)
+        Me.Minimize_Pic.Location = New System.Drawing.Point(744, 3)
         Me.Minimize_Pic.Name = "Minimize_Pic"
         Me.Minimize_Pic.Size = New System.Drawing.Size(24, 24)
         Me.Minimize_Pic.TabIndex = 2
@@ -93,9 +96,10 @@ Partial Class Pix
         '
         'Close_Pic
         '
+        Me.Close_Pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Close_Pic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Close_Pic.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Close
-        Me.Close_Pic.Location = New System.Drawing.Point(714, 3)
+        Me.Close_Pic.Location = New System.Drawing.Point(771, 3)
         Me.Close_Pic.Name = "Close_Pic"
         Me.Close_Pic.Size = New System.Drawing.Size(24, 24)
         Me.Close_Pic.TabIndex = 1
@@ -140,9 +144,9 @@ Partial Class Pix
         '
         Me.QR_Code_Banco_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.QR_Code_Banco_lbl.ForeColor = System.Drawing.Color.MediumTurquoise
-        Me.QR_Code_Banco_lbl.Location = New System.Drawing.Point(22, 329)
+        Me.QR_Code_Banco_lbl.Location = New System.Drawing.Point(12, 348)
         Me.QR_Code_Banco_lbl.Name = "QR_Code_Banco_lbl"
-        Me.QR_Code_Banco_lbl.Size = New System.Drawing.Size(128, 13)
+        Me.QR_Code_Banco_lbl.Size = New System.Drawing.Size(146, 13)
         Me.QR_Code_Banco_lbl.TabIndex = 8
         Me.QR_Code_Banco_lbl.Tag = " "
         Me.QR_Code_Banco_lbl.Text = "Banco:"
@@ -177,9 +181,10 @@ Partial Class Pix
         '
         Me.QR_Code_Pix_Pic.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.QR_Code_Pix_Pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.QR_Code_Pix_Pic.Location = New System.Drawing.Point(22, 195)
+        Me.QR_Code_Pix_Pic.Location = New System.Drawing.Point(11, 195)
         Me.QR_Code_Pix_Pic.Name = "QR_Code_Pix_Pic"
-        Me.QR_Code_Pix_Pic.Size = New System.Drawing.Size(128, 128)
+        Me.QR_Code_Pix_Pic.Size = New System.Drawing.Size(148, 148)
+        Me.QR_Code_Pix_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.QR_Code_Pix_Pic.TabIndex = 5
         Me.QR_Code_Pix_Pic.TabStop = False
         Me.QR_Code_Pix_Pic.Visible = False
@@ -231,31 +236,40 @@ Partial Class Pix
         'Panel_Principal
         '
         Me.Panel_Principal.BackColor = System.Drawing.Color.Transparent
+        Me.Panel_Principal.Controls.Add(Me.Panel1)
         Me.Panel_Principal.Controls.Add(Me.ListView1)
         Me.Panel_Principal.Controls.Add(Me.Panel_Mensagem)
         Me.Panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Principal.Location = New System.Drawing.Point(170, 30)
         Me.Panel_Principal.Name = "Panel_Principal"
-        Me.Panel_Principal.Size = New System.Drawing.Size(580, 470)
+        Me.Panel_Principal.Size = New System.Drawing.Size(630, 470)
         Me.Panel_Principal.TabIndex = 3
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.Panel1.Location = New System.Drawing.Point(612, 2)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(17, 467)
+        Me.Panel1.TabIndex = 6
         '
         'ListView1
         '
         Me.ListView1.Activation = System.Windows.Forms.ItemActivation.TwoClick
         Me.ListView1.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ListView1.BackgroundImage = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_480_370
+        Me.ListView1.BackgroundImage = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_630x452
+        Me.ListView1.BackgroundImageTiled = True
         Me.ListView1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.Banco, Me.Chave})
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ID, Me.Banco, Me.Nome, Me.Chave})
         Me.ListView1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ListView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ListView1.ForeColor = System.Drawing.Color.White
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
-        Me.ListView1.HideSelection = False
         Me.ListView1.Location = New System.Drawing.Point(0, 18)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(580, 452)
+        Me.ListView1.Size = New System.Drawing.Size(630, 452)
         Me.ListView1.TabIndex = 4
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -271,11 +285,17 @@ Partial Class Pix
         Me.Banco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.Banco.Width = 100
         '
+        'Nome
+        '
+        Me.Nome.Text = "Nome"
+        Me.Nome.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Nome.Width = 145
+        '
         'Chave
         '
         Me.Chave.Text = "Chave"
         Me.Chave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Chave.Width = 310
+        Me.Chave.Width = 295
         '
         'Panel_Mensagem
         '
@@ -283,7 +303,7 @@ Partial Class Pix
         Me.Panel_Mensagem.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Mensagem.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Mensagem.Name = "Panel_Mensagem"
-        Me.Panel_Mensagem.Size = New System.Drawing.Size(580, 18)
+        Me.Panel_Mensagem.Size = New System.Drawing.Size(630, 18)
         Me.Panel_Mensagem.TabIndex = 5
         '
         'Mensagem_lbl
@@ -294,7 +314,7 @@ Partial Class Pix
         Me.Mensagem_lbl.ForeColor = System.Drawing.Color.Red
         Me.Mensagem_lbl.Location = New System.Drawing.Point(0, 0)
         Me.Mensagem_lbl.Name = "Mensagem_lbl"
-        Me.Mensagem_lbl.Size = New System.Drawing.Size(580, 18)
+        Me.Mensagem_lbl.Size = New System.Drawing.Size(630, 18)
         Me.Mensagem_lbl.TabIndex = 0
         Me.Mensagem_lbl.Text = "Dê 2 cliques para copiar a chave."
         Me.Mensagem_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -308,7 +328,7 @@ Partial Class Pix
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(750, 500)
+        Me.ClientSize = New System.Drawing.Size(800, 500)
         Me.ControlBox = False
         Me.Controls.Add(Me.Panel_Principal)
         Me.Controls.Add(Me.Lateral_Panel)
@@ -356,5 +376,7 @@ Partial Class Pix
     Friend WithEvents Version_lbl As System.Windows.Forms.Label
     Friend WithEvents QR_Code_Banco_lbl As System.Windows.Forms.Label
     Friend WithEvents Information_Pic As System.Windows.Forms.PictureBox
+    Friend WithEvents Nome As System.Windows.Forms.ColumnHeader
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
 
 End Class

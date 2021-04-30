@@ -15,11 +15,11 @@ PixChavesLeatoriaeFixa
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
-</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources._1006106">
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.add_key_24px">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.add_key_24px">
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Amigos">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -63,7 +63,7 @@ PixChavesLeatoriaeFixa
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
-</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_480_370">
+</member><member name="P:Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_630x452">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>

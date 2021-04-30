@@ -9,6 +9,8 @@ Public Class Pix
         CarregaBordas(Me)
         CarregaBordas(Adicionar_btn)
         CarregaBordas(Remover_btn)
+        CarregaBordas(Panel_Principal, 20)
+        CarregaBordas(Panel_Mensagem, 20)
         Version_lbl.Text = "Versão: " & My.Application.Info.Version.ToString
         CreatorTable()
         LoadPix(ListView1)
@@ -81,6 +83,8 @@ Public Class Pix
 
         Catch ex As Exception
 
+            MessageBox.Show(ex.Message, "Error.", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+
         End Try
     End Sub
 
@@ -125,6 +129,12 @@ Public Class Pix
 
         End Try
     End Sub
+
+    Private Sub ListView1_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ListView1.MouseWheel
+        
+    End Sub
+
+
 
     Private Sub ListView1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListView1.SelectedIndexChanged
         Try

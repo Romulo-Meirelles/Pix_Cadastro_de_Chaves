@@ -57,7 +57,7 @@ Partial Class Information
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources._1006106
+        Me.PictureBox1.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Amigos
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(137, 129)
@@ -229,6 +229,7 @@ Partial Class Information
         Me.QR_Code_Pic.Location = New System.Drawing.Point(16, 147)
         Me.QR_Code_Pic.Name = "QR_Code_Pic"
         Me.QR_Code_Pic.Size = New System.Drawing.Size(130, 130)
+        Me.QR_Code_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.QR_Code_Pic.TabIndex = 17
         Me.QR_Code_Pic.TabStop = False
         '

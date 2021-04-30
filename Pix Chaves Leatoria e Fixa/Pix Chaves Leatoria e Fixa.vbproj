@@ -104,11 +104,17 @@
     <Compile Include="DataBase\SQL_Lite.vb" />
     <Compile Include="Ferramentas\Bordas.vb" />
     <Compile Include="Ferramentas\Form_Move.vb" />
+    <Compile Include="Ferramentas\Matrix_Pix.vb" />
     <Compile Include="Information.Designer.vb">
       <DependentUpon>Information.vb</DependentUpon>
     </Compile>
     <Compile Include="Information.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Pix.vb">
       <SubType>Form</SubType>
@@ -122,11 +128,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="My Project\Resources.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="My Project\Settings.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -143,9 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Pix.resx">
       <DependentUpon>Pix.vb</DependentUpon>
@@ -184,13 +185,7 @@
     <None Include="Resources\remove_key_24px.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Pix_480_370.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\information_24px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\1006106.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BTC_24x24.png" />
@@ -203,6 +198,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\DogeCoin_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pix_630x452.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amigos.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

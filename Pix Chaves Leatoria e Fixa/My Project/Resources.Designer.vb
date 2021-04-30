@@ -63,9 +63,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property _1006106() As System.Drawing.Bitmap
+        Friend ReadOnly Property add_key_24px() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("1006106", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("add_key_24px", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -73,9 +73,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property add_key_24px() As System.Drawing.Bitmap
+        Friend ReadOnly Property Amigos() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("add_key_24px", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Amigos", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -183,9 +183,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Pix_480_370() As System.Drawing.Bitmap
+        Friend ReadOnly Property Pix_630x452() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Pix_480_370", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("Pix_630x452", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

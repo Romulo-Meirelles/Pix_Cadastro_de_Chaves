@@ -32,6 +32,10 @@ Partial Class Adicionar
         Me.Adicionar_btn = New System.Windows.Forms.Button()
         Me.Close_Pic = New System.Windows.Forms.PictureBox()
         Me.Bancos_Images = New System.Windows.Forms.ImageList(Me.components)
+        Me.Nome_lbl = New System.Windows.Forms.Label()
+        Me.Nome_txb = New System.Windows.Forms.TextBox()
+        Me.Procurar_lbl = New System.Windows.Forms.Label()
+        Me.Procurar_txb = New System.Windows.Forms.TextBox()
         CType(Me.Banco_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Close_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -40,16 +44,16 @@ Partial Class Adicionar
         '
         Me.Banco_Cbx.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Banco_Cbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.Banco_Cbx.Location = New System.Drawing.Point(26, 36)
+        Me.Banco_Cbx.Location = New System.Drawing.Point(26, 46)
         Me.Banco_Cbx.Name = "Banco_Cbx"
         Me.Banco_Cbx.Size = New System.Drawing.Size(185, 21)
         Me.Banco_Cbx.TabIndex = 0
         '
         'Chave_Pix_txt
         '
-        Me.Chave_Pix_txt.Location = New System.Drawing.Point(26, 91)
+        Me.Chave_Pix_txt.Location = New System.Drawing.Point(26, 151)
         Me.Chave_Pix_txt.Name = "Chave_Pix_txt"
-        Me.Chave_Pix_txt.Size = New System.Drawing.Size(204, 20)
+        Me.Chave_Pix_txt.Size = New System.Drawing.Size(185, 20)
         Me.Chave_Pix_txt.TabIndex = 1
         '
         'Banco_lbl
@@ -57,7 +61,7 @@ Partial Class Adicionar
         Me.Banco_lbl.AutoSize = True
         Me.Banco_lbl.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Banco_lbl.ForeColor = System.Drawing.Color.White
-        Me.Banco_lbl.Location = New System.Drawing.Point(23, 17)
+        Me.Banco_lbl.Location = New System.Drawing.Point(23, 27)
         Me.Banco_lbl.Name = "Banco_lbl"
         Me.Banco_lbl.Size = New System.Drawing.Size(53, 15)
         Me.Banco_lbl.TabIndex = 2
@@ -68,7 +72,7 @@ Partial Class Adicionar
         Me.Chave_Pix_lbl.AutoSize = True
         Me.Chave_Pix_lbl.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Chave_Pix_lbl.ForeColor = System.Drawing.Color.White
-        Me.Chave_Pix_lbl.Location = New System.Drawing.Point(23, 72)
+        Me.Chave_Pix_lbl.Location = New System.Drawing.Point(23, 132)
         Me.Chave_Pix_lbl.Name = "Chave_Pix_lbl"
         Me.Chave_Pix_lbl.Size = New System.Drawing.Size(70, 15)
         Me.Chave_Pix_lbl.TabIndex = 3
@@ -76,7 +80,7 @@ Partial Class Adicionar
         '
         'Banco_Pic
         '
-        Me.Banco_Pic.Location = New System.Drawing.Point(244, 27)
+        Me.Banco_Pic.Location = New System.Drawing.Point(259, 74)
         Me.Banco_Pic.Name = "Banco_Pic"
         Me.Banco_Pic.Size = New System.Drawing.Size(74, 74)
         Me.Banco_Pic.TabIndex = 4
@@ -84,6 +88,7 @@ Partial Class Adicionar
         '
         'Adicionar_btn
         '
+        Me.Adicionar_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Adicionar_btn.BackColor = System.Drawing.Color.Indigo
         Me.Adicionar_btn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Adicionar_btn.FlatAppearance.BorderSize = 0
@@ -94,9 +99,9 @@ Partial Class Adicionar
         Me.Adicionar_btn.ForeColor = System.Drawing.Color.White
         Me.Adicionar_btn.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.add_key_24px
         Me.Adicionar_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Adicionar_btn.Location = New System.Drawing.Point(244, 108)
+        Me.Adicionar_btn.Location = New System.Drawing.Point(259, 163)
         Me.Adicionar_btn.Name = "Adicionar_btn"
-        Me.Adicionar_btn.Size = New System.Drawing.Size(101, 34)
+        Me.Adicionar_btn.Size = New System.Drawing.Size(109, 34)
         Me.Adicionar_btn.TabIndex = 5
         Me.Adicionar_btn.Text = "Adicionar"
         Me.Adicionar_btn.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -104,9 +109,10 @@ Partial Class Adicionar
         '
         'Close_Pic
         '
+        Me.Close_Pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Close_Pic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Close_Pic.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Close
-        Me.Close_Pic.Location = New System.Drawing.Point(323, 3)
+        Me.Close_Pic.Location = New System.Drawing.Point(349, 7)
         Me.Close_Pic.Name = "Close_Pic"
         Me.Close_Pic.Size = New System.Drawing.Size(24, 24)
         Me.Close_Pic.TabIndex = 6
@@ -116,32 +122,92 @@ Partial Class Adicionar
         '
         Me.Bancos_Images.ImageStream = CType(resources.GetObject("Bancos_Images.ImageStream"), System.Windows.Forms.ImageListStreamer)
         Me.Bancos_Images.TransparentColor = System.Drawing.Color.Transparent
-        Me.Bancos_Images.Images.SetKeyName(0, "Bradesco.jpg")
-        Me.Bancos_Images.Images.SetKeyName(1, "Santander.png")
-        Me.Bancos_Images.Images.SetKeyName(2, "Itau.png")
-        Me.Bancos_Images.Images.SetKeyName(3, "Hsbc.png")
-        Me.Bancos_Images.Images.SetKeyName(4, "Caixa.jpg")
-        Me.Bancos_Images.Images.SetKeyName(5, "Banco_Do_Brasil.png")
-        Me.Bancos_Images.Images.SetKeyName(6, "Original.jpg")
-        Me.Bancos_Images.Images.SetKeyName(7, "Nubank.jpg")
-        Me.Bancos_Images.Images.SetKeyName(8, "Inter.jpg")
-        Me.Bancos_Images.Images.SetKeyName(9, "C6.png")
-        Me.Bancos_Images.Images.SetKeyName(10, "Neon.jpg")
-        Me.Bancos_Images.Images.SetKeyName(11, "BS2.jpg")
-        Me.Bancos_Images.Images.SetKeyName(12, "PagBank.jpg")
-        Me.Bancos_Images.Images.SetKeyName(13, "Next.png")
-        Me.Bancos_Images.Images.SetKeyName(14, "PicPay.jpg")
-        Me.Bancos_Images.Images.SetKeyName(15, "MercadoPago.png")
-        Me.Bancos_Images.Images.SetKeyName(16, "RecargaPay.jpg")
-        Me.Bancos_Images.Images.SetKeyName(17, "download.png")
+        Me.Bancos_Images.Images.SetKeyName(0, "Bradesco")
+        Me.Bancos_Images.Images.SetKeyName(1, "Santander")
+        Me.Bancos_Images.Images.SetKeyName(2, "Itau")
+        Me.Bancos_Images.Images.SetKeyName(3, "HSBC")
+        Me.Bancos_Images.Images.SetKeyName(4, "Caixa Econômica")
+        Me.Bancos_Images.Images.SetKeyName(5, "Banco do Brasil")
+        Me.Bancos_Images.Images.SetKeyName(6, "Original")
+        Me.Bancos_Images.Images.SetKeyName(7, "Nubank")
+        Me.Bancos_Images.Images.SetKeyName(8, "Inter")
+        Me.Bancos_Images.Images.SetKeyName(9, "C6")
+        Me.Bancos_Images.Images.SetKeyName(10, "Neon")
+        Me.Bancos_Images.Images.SetKeyName(11, "BS2")
+        Me.Bancos_Images.Images.SetKeyName(12, "PagBank")
+        Me.Bancos_Images.Images.SetKeyName(13, "Next")
+        Me.Bancos_Images.Images.SetKeyName(14, "PicPay")
+        Me.Bancos_Images.Images.SetKeyName(15, "Mercado Pago")
+        Me.Bancos_Images.Images.SetKeyName(16, "Recarga Pay")
+        Me.Bancos_Images.Images.SetKeyName(17, "AgiBank")
+        Me.Bancos_Images.Images.SetKeyName(18, "Alter")
+        Me.Bancos_Images.Images.SetKeyName(19, "Banco da Amazônia")
+        Me.Bancos_Images.Images.SetKeyName(20, "Banco de Brasilia")
+        Me.Bancos_Images.Images.SetKeyName(21, "Banco do Nordeste")
+        Me.Bancos_Images.Images.SetKeyName(22, "Banrisul")
+        Me.Bancos_Images.Images.SetKeyName(23, "Benestes")
+        Me.Bancos_Images.Images.SetKeyName(24, "BTG Pactual")
+        Me.Bancos_Images.Images.SetKeyName(25, "CitiBank")
+        Me.Bancos_Images.Images.SetKeyName(26, "Digio")
+        Me.Bancos_Images.Images.SetKeyName(27, "Iti")
+        Me.Bancos_Images.Images.SetKeyName(28, "Modal Mais")
+        Me.Bancos_Images.Images.SetKeyName(29, "Pag!")
+        Me.Bancos_Images.Images.SetKeyName(30, "PAN")
+        Me.Bancos_Images.Images.SetKeyName(31, "Safra")
+        Me.Bancos_Images.Images.SetKeyName(32, "Sicoob")
+        Me.Bancos_Images.Images.SetKeyName(33, "Sicredi")
+        Me.Bancos_Images.Images.SetKeyName(34, "Sofisa")
+        Me.Bancos_Images.Images.SetKeyName(35, "Super Digital")
+        Me.Bancos_Images.Images.SetKeyName(36, "UnoBank")
+        Me.Bancos_Images.Images.SetKeyName(37, "Mercado Bitcoin")
+        '
+        'Nome_lbl
+        '
+        Me.Nome_lbl.AutoSize = True
+        Me.Nome_lbl.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nome_lbl.ForeColor = System.Drawing.Color.White
+        Me.Nome_lbl.Location = New System.Drawing.Point(23, 80)
+        Me.Nome_lbl.Name = "Nome_lbl"
+        Me.Nome_lbl.Size = New System.Drawing.Size(85, 15)
+        Me.Nome_lbl.TabIndex = 8
+        Me.Nome_lbl.Text = "Nome Titular:"
+        '
+        'Nome_txb
+        '
+        Me.Nome_txb.Location = New System.Drawing.Point(26, 99)
+        Me.Nome_txb.Name = "Nome_txb"
+        Me.Nome_txb.Size = New System.Drawing.Size(185, 20)
+        Me.Nome_txb.TabIndex = 7
+        '
+        'Procurar_lbl
+        '
+        Me.Procurar_lbl.AutoSize = True
+        Me.Procurar_lbl.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Procurar_lbl.ForeColor = System.Drawing.Color.White
+        Me.Procurar_lbl.Location = New System.Drawing.Point(223, 27)
+        Me.Procurar_lbl.Name = "Procurar_lbl"
+        Me.Procurar_lbl.Size = New System.Drawing.Size(100, 15)
+        Me.Procurar_lbl.TabIndex = 10
+        Me.Procurar_lbl.Text = "Procurar Banco:"
+        '
+        'Procurar_txb
+        '
+        Me.Procurar_txb.Location = New System.Drawing.Point(226, 46)
+        Me.Procurar_txb.Name = "Procurar_txb"
+        Me.Procurar_txb.Size = New System.Drawing.Size(142, 20)
+        Me.Procurar_txb.TabIndex = 9
         '
         'Adicionar
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(352, 150)
+        Me.ClientSize = New System.Drawing.Size(381, 209)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Procurar_lbl)
+        Me.Controls.Add(Me.Procurar_txb)
+        Me.Controls.Add(Me.Nome_lbl)
+        Me.Controls.Add(Me.Nome_txb)
         Me.Controls.Add(Me.Close_Pic)
         Me.Controls.Add(Me.Adicionar_btn)
         Me.Controls.Add(Me.Banco_Pic)
@@ -171,4 +237,8 @@ Partial Class Adicionar
     Friend WithEvents Adicionar_btn As System.Windows.Forms.Button
     Friend WithEvents Close_Pic As System.Windows.Forms.PictureBox
     Friend WithEvents Bancos_Images As System.Windows.Forms.ImageList
+    Friend WithEvents Nome_lbl As System.Windows.Forms.Label
+    Friend WithEvents Nome_txb As System.Windows.Forms.TextBox
+    Friend WithEvents Procurar_lbl As System.Windows.Forms.Label
+    Friend WithEvents Procurar_txb As System.Windows.Forms.TextBox
 End Class

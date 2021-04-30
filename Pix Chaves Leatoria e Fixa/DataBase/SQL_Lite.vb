@@ -6,6 +6,7 @@ Imports System.Data.SQLite.EF6
 Module SQL_Lite
 
     Private ReadOnly DataBase As String = "Data Source=PixDB.pix; Version=3" 'Compress=TRUE; Integrated Security=true; Password=GySksZqGQrqhNJie
+    Private Quantidades As Integer = 0
 
     Public Sub CreatorTable()
 
@@ -25,7 +26,7 @@ Module SQL_Lite
         SQLcommand.CommandTimeout = 5
 
         'Cria tabela com o nome do Grupo
-        SQLcommand.CommandText = "CREATE TABLE Pix (ID INTEGER PRIMARY KEY AUTOINCREMENT, Banco TEXT, Chave TEXT);"
+        SQLcommand.CommandText = "CREATE TABLE Pix (ID INTEGER PRIMARY KEY, Banco TEXT, Nome TEXT, Chave TEXT);"
 
         'Executa a Query Acima
         SQLcommand.ExecuteNonQuery()
@@ -37,12 +38,17 @@ Module SQL_Lite
         
     End Sub
 
-    Public Sub Insert(ByVal Banco As String, ByVal Chave As String)
+    Public Sub Insert(ByVal Banco As String, ByVal Nome As String, ByVal Chave As String)
 
-        'If CheckExist(Banco) = True Then
-        '    Update()
-        '    Exit Sub
-        'End If
+        Quantidades = 1
+
+LL:
+        If CheckExist(Quantidades) = True Then
+            Quantidades += 1
+            GoTo LL
+        End If
+
+        Dim ID As Integer = Quantidades
 
         'Declara as variaveis para a conexão.
         Dim SQLconnect As New SQLiteConnection()
@@ -56,8 +62,10 @@ Module SQL_Lite
         SQLcommand = SQLconnect.CreateCommand
         SQLcommand.CommandTimeout = 5
 
+
+
         'Cria tabela com o nome do Grupo
-        SQLcommand.CommandText = "INSERT INTO Pix (Banco, Chave) values (" & "'" & Banco & "'" & "," & "'" & Chave & "'" & ")"
+        SQLcommand.CommandText = "INSERT INTO Pix (ID, Banco, Nome, Chave) values (" & "'" & ID & "'" & "," & "'" & Banco & "'" & "," & "'" & Nome & "'" & "," & "'" & Chave & "'" & ")"
 
         'Executa a Query Acima
         SQLcommand.ExecuteNonQuery()
@@ -67,10 +75,10 @@ Module SQL_Lite
         SQLconnect.Close()
         SQLconnect.Dispose()
         SQLcommand.Dispose()
-        
+
     End Sub
 
-    Public Sub Update(ByVal Banco As String, ByVal Chave As String)
+    Public Sub Update(ByVal ID As Integer, ByVal Banco As String, ByVal Nome As String, ByVal Chave As String)
 
         If CheckExist(Banco) = False Then
             Exit Sub
@@ -89,7 +97,7 @@ Module SQL_Lite
         SQLcommand.CommandTimeout = 5
 
         'Cria tabela com o nome do Grupo
-        SQLcommand.CommandText = "UPDATE Pix SET Banco = " & Banco & ", Chave =  " & Chave & " WHERE Banco = " & Banco & ""
+        SQLcommand.CommandText = "UPDATE Pix SET Banco = " & Banco & ", Nome = " & Nome & ", Chave =  " & Chave & " WHERE ID = " & ID & ""
 
         'Executa a Query Acima
         SQLcommand.ExecuteNonQuery()
@@ -98,7 +106,7 @@ Module SQL_Lite
         SQLconnect.Close()
         SQLconnect.Dispose()
         SQLcommand.Dispose()
-        
+
     End Sub
 
     Public Sub Delete(ByVal ID As String)
@@ -132,6 +140,7 @@ Module SQL_Lite
         
     End Sub
     Public Sub LoadPix(ByVal Lista As ListView)
+
         'Declara as variaveis para a conexão.
         Dim SQLconnect As New SQLiteConnection()
         Dim SQLcommand As SQLiteCommand
@@ -162,6 +171,7 @@ Module SQL_Lite
                 .Fill(sqltable)
             End With
 
+            Quantidades = 0
             Dim GA As New ListViewGroup
             For i = 0 To sqltable.Rows.Count - 1
 
@@ -169,7 +179,9 @@ Module SQL_Lite
                     .Items.Add(sqltable.Rows(i)("ID"), 0)
                     With .Items(.Items.Count - 1).SubItems
                         .Add(sqltable.Rows(i)("Banco"))
+                        .Add(sqltable.Rows(i)("Nome"))
                         .Add(sqltable.Rows(i)("Chave"))
+                        Quantidades += 1
 
                     End With
                 End With
@@ -182,8 +194,9 @@ Module SQL_Lite
             SQLconnect.Close()
             SQLconnect.Dispose()
             SQLcommand.Dispose()
-           
+
             INSERTICON(Lista, 1)
+            ColorSelect(Lista, 3)
         Catch
             SQLconnect.Close()
             SQLconnect.Dispose()
@@ -205,8 +218,8 @@ Module SQL_Lite
 
                 With SQLCommand
                     .Connection = SQLconnect
-                    .CommandText = "SELECT * FROM Pix WHERE ID = @user"
-                    .Parameters.AddWithValue("@user", ID)
+                    .CommandText = "SELECT * FROM Pix WHERE ID = @ID"
+                    .Parameters.AddWithValue("@ID", ID)
                 End With
 
                 Dim Reader As SQLite.SQLiteDataReader = SQLCommand.ExecuteReader
@@ -245,11 +258,9 @@ Module SQL_Lite
 
         LIST.SmallImageList = MyImagesIcons
         For Each L As ListViewItem In LIST.Items
-
-            'DIZ O NOME DA COLUNA
             Dim NAMES As String = L.SubItems(SubItemIndex).Text
-            Dim index As Integer = Array.FindIndex(Bancos.Bancos, Function(s) s = NAMES)
-            LIST.Items(L.Index).ImageIndex = index
+            Dim Index As Integer = Adicionar.Bancos_Images.Images.IndexOfKey(NAMES)
+            LIST.Items(L.Index).ImageIndex = Index
         Next
     End Sub
     Private Function LoadImagesWithSize(sz As Size) As ImageList
@@ -264,4 +275,16 @@ Module SQL_Lite
         Return MyImagesIcons
 
     End Function
+    Public Sub ColorSelect(ByVal lstV As ListView, ByVal SubItemIndex As Int16)
+
+        'CONTA OS ITEMS NA LISTVIEW E VAI INDO ADICIONANDO
+        Dim ITEMCOUNT As Integer = 0
+
+        'SUBITEMINDEX VERIFICA A COLUNA COM O NOME
+        For Each L As ListViewItem In lstV.Items
+            lstV.Items(ITEMCOUNT).UseItemStyleForSubItems = False
+            lstV.Items(ITEMCOUNT).SubItems(SubItemIndex).ForeColor = Color.DeepSkyBlue
+            ITEMCOUNT += 1
+        Next
+    End Sub
 End Module
