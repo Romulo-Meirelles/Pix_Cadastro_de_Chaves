@@ -4,7 +4,6 @@ Imports MessagingToolkit.QRCode
 
 
 Public Class Pix
-
     Private Sub Pix_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         CarregaBordas(Me)
         CarregaBordas(Adicionar_btn)
@@ -26,6 +25,7 @@ Public Class Pix
 
     Private Sub Close_Pic_Click(sender As System.Object, e As System.EventArgs) Handles Close_Pic.Click
         Try
+            NotifyIcon1.Visible = False
             End
             Application.Exit()
         Catch ex As Exception
@@ -131,14 +131,14 @@ Public Class Pix
     End Sub
 
     Private Sub ListView1_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ListView1.MouseWheel
-        
+
     End Sub
 
 
 
     Private Sub ListView1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListView1.SelectedIndexChanged
         Try
-            Dim Pix As String = ListView1.Items(ListView1.FocusedItem.Index).SubItems(2).Text
+            Dim Pix As String = ListView1.Items(ListView1.FocusedItem.Index).SubItems(3).Text
             Dim qrencod As New QRCode.Codec.QRCodeEncoder
             Dim qrcode As Bitmap = qrencod.Encode(Pix)
             QR_Code_Pix_Pic.Image = TryCast(qrcode, Image)
