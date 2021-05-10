@@ -8,6 +8,7 @@ Public Class Pix
         CarregaBordas(Me)
         CarregaBordas(Adicionar_btn)
         CarregaBordas(Remover_btn)
+        CarregaBordas(Gerar_Pagamentos_btn)
         CarregaBordas(Panel_Principal, 20)
         CarregaBordas(Panel_Mensagem, 20)
         Version_lbl.Text = "Versão: " & My.Application.Info.Version.ToString
@@ -123,23 +124,17 @@ Public Class Pix
 
     Private Sub ListView1_MouseDoubleClick(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ListView1.MouseDoubleClick
         Try
-            Clipboard.SetText(ListView1.Items(ListView1.FocusedItem.Index).SubItems(2).Text)
+            Clipboard.SetText(ListView1.Items(ListView1.FocusedItem.Index).SubItems(3).Text)
             Mensagem("Chave Pix copiada com sucesso!")
         Catch ex As Exception
 
         End Try
     End Sub
 
-    Private Sub ListView1_MouseWheel(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles ListView1.MouseWheel
-
-    End Sub
-
-
-
     Private Sub ListView1_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles ListView1.SelectedIndexChanged
         Try
             Dim Pix As String = ListView1.Items(ListView1.FocusedItem.Index).SubItems(3).Text
-            Dim qrencod As New QRCode.Codec.QRCodeEncoder
+            Dim qrencod As New Codec.QRCodeEncoder
             Dim qrcode As Bitmap = qrencod.Encode(Pix)
             QR_Code_Pix_Pic.Image = TryCast(qrcode, Image)
             QR_Code_Banco_lbl.Text = ListView1.Items(ListView1.FocusedItem.Index).SubItems(1).Text
@@ -158,5 +153,17 @@ Public Class Pix
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Gerar_Pagamentos_btn_Click(sender As System.Object, e As System.EventArgs) Handles Gerar_Pagamentos_btn.Click
+        On Error Resume Next
+        QR_Code_Pix_Pic.Visible = False
+        QR_Code_lbl.Visible = False
+        QR_Code_Banco_lbl.Visible = False
+        Dim Pagamentos As New Pagamento
+        Pagamentos.ChavePix = ListView1.Items(ListView1.FocusedItem.Index).SubItems(3).Text
+        Pagamentos.Nome = ListView1.Items(ListView1.FocusedItem.Index).SubItems(2).Text
+        Pagamentos.Show()
+        
     End Sub
 End Class

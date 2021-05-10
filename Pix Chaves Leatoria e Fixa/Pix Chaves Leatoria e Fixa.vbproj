@@ -59,6 +59,10 @@
     <Reference Include="MessagingToolkit.QRCode">
       <HintPath>..\..\..\DLLs Libraries\MessagingToolkit.QRCode.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\json\Bin\Net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.102.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
@@ -102,9 +106,12 @@
     </Compile>
     <Compile Include="Bancos.vb" />
     <Compile Include="DataBase\SQL_Lite.vb" />
+    <Compile Include="Ferramentas\API_Request.vb" />
     <Compile Include="Ferramentas\Bordas.vb" />
+    <Compile Include="Ferramentas\ConvertToImage.vb" />
     <Compile Include="Ferramentas\Form_Move.vb" />
-    <Compile Include="Ferramentas\Matrix_Pix.vb" />
+    <Compile Include="Ferramentas\Mascara.vb" />
+    <Compile Include="Ferramentas\Matriz_Pix_Request.vb" />
     <Compile Include="Information.Designer.vb">
       <DependentUpon>Information.vb</DependentUpon>
     </Compile>
@@ -115,6 +122,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Pagamento.Designer.vb">
+      <DependentUpon>Pagamento.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pagamento.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pix.vb">
       <SubType>Form</SubType>
@@ -134,6 +147,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="QRCode.Designer.vb">
+      <DependentUpon>QRCode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QRCode.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Adicionar.resx">
@@ -148,8 +167,14 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pagamento.resx">
+      <DependentUpon>Pagamento.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pix.resx">
       <DependentUpon>Pix.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QRCode.resx">
+      <DependentUpon>QRCode.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +229,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Amigos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qr_code_24px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -257,10 +257,13 @@ LL:
         MyImagesIcons = LoadImagesWithSize(New Size(30, 30))
 
         LIST.SmallImageList = MyImagesIcons
+
+
         For Each L As ListViewItem In LIST.Items
             Dim NAMES As String = L.SubItems(SubItemIndex).Text
             Dim Index As Integer = Adicionar.Bancos_Images.Images.IndexOfKey(NAMES)
             LIST.Items(L.Index).ImageIndex = Index
+
         Next
     End Sub
     Private Function LoadImagesWithSize(sz As Size) As ImageList

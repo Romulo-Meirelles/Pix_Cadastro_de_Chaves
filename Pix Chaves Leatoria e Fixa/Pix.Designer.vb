@@ -30,6 +30,7 @@ Partial Class Pix
         Me.Close_Pic = New System.Windows.Forms.PictureBox()
         Me.Pix_Icon_Pic = New System.Windows.Forms.PictureBox()
         Me.Lateral_Panel = New System.Windows.Forms.Panel()
+        Me.Gerar_Pagamentos_btn = New System.Windows.Forms.Button()
         Me.Information_Pic = New System.Windows.Forms.PictureBox()
         Me.QR_Code_Banco_lbl = New System.Windows.Forms.Label()
         Me.Version_lbl = New System.Windows.Forms.Label()
@@ -39,7 +40,7 @@ Partial Class Pix
         Me.Adicionar_btn = New System.Windows.Forms.Button()
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.Panel_Principal = New System.Windows.Forms.Panel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel_BlockScroll = New System.Windows.Forms.Panel()
         Me.ListView1 = New System.Windows.Forms.ListView()
         Me.ID = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Banco = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
@@ -117,6 +118,7 @@ Partial Class Pix
         'Lateral_Panel
         '
         Me.Lateral_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Lateral_Panel.Controls.Add(Me.Gerar_Pagamentos_btn)
         Me.Lateral_Panel.Controls.Add(Me.Information_Pic)
         Me.Lateral_Panel.Controls.Add(Me.QR_Code_Banco_lbl)
         Me.Lateral_Panel.Controls.Add(Me.Version_lbl)
@@ -127,8 +129,27 @@ Partial Class Pix
         Me.Lateral_Panel.Dock = System.Windows.Forms.DockStyle.Left
         Me.Lateral_Panel.Location = New System.Drawing.Point(0, 30)
         Me.Lateral_Panel.Name = "Lateral_Panel"
-        Me.Lateral_Panel.Size = New System.Drawing.Size(170, 470)
+        Me.Lateral_Panel.Size = New System.Drawing.Size(200, 470)
         Me.Lateral_Panel.TabIndex = 1
+        '
+        'Gerar_Pagamentos_btn
+        '
+        Me.Gerar_Pagamentos_btn.BackColor = System.Drawing.Color.Indigo
+        Me.Gerar_Pagamentos_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Gerar_Pagamentos_btn.FlatAppearance.BorderSize = 0
+        Me.Gerar_Pagamentos_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green
+        Me.Gerar_Pagamentos_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Gerar_Pagamentos_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Gerar_Pagamentos_btn.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Gerar_Pagamentos_btn.ForeColor = System.Drawing.Color.White
+        Me.Gerar_Pagamentos_btn.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.qr_code_24px
+        Me.Gerar_Pagamentos_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Gerar_Pagamentos_btn.Location = New System.Drawing.Point(9, 139)
+        Me.Gerar_Pagamentos_btn.Name = "Gerar_Pagamentos_btn"
+        Me.Gerar_Pagamentos_btn.Size = New System.Drawing.Size(182, 54)
+        Me.Gerar_Pagamentos_btn.TabIndex = 10
+        Me.Gerar_Pagamentos_btn.Text = "Gerar Pagamento"
+        Me.Gerar_Pagamentos_btn.UseVisualStyleBackColor = False
         '
         'Information_Pic
         '
@@ -143,10 +164,11 @@ Partial Class Pix
         'QR_Code_Banco_lbl
         '
         Me.QR_Code_Banco_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.QR_Code_Banco_lbl.ForeColor = System.Drawing.Color.MediumTurquoise
-        Me.QR_Code_Banco_lbl.Location = New System.Drawing.Point(12, 348)
+        Me.QR_Code_Banco_lbl.Font = New System.Drawing.Font("Papyrus", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.QR_Code_Banco_lbl.ForeColor = System.Drawing.Color.SpringGreen
+        Me.QR_Code_Banco_lbl.Location = New System.Drawing.Point(27, 395)
         Me.QR_Code_Banco_lbl.Name = "QR_Code_Banco_lbl"
-        Me.QR_Code_Banco_lbl.Size = New System.Drawing.Size(146, 13)
+        Me.QR_Code_Banco_lbl.Size = New System.Drawing.Size(148, 27)
         Me.QR_Code_Banco_lbl.TabIndex = 8
         Me.QR_Code_Banco_lbl.Tag = " "
         Me.QR_Code_Banco_lbl.Text = "Banco:"
@@ -168,10 +190,11 @@ Partial Class Pix
         '
         Me.QR_Code_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.QR_Code_lbl.AutoSize = True
+        Me.QR_Code_lbl.Font = New System.Drawing.Font("Papyrus", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QR_Code_lbl.ForeColor = System.Drawing.Color.MediumTurquoise
-        Me.QR_Code_lbl.Location = New System.Drawing.Point(41, 176)
+        Me.QR_Code_lbl.Location = New System.Drawing.Point(31, 211)
         Me.QR_Code_lbl.Name = "QR_Code_lbl"
-        Me.QR_Code_lbl.Size = New System.Drawing.Size(95, 13)
+        Me.QR_Code_lbl.Size = New System.Drawing.Size(143, 19)
         Me.QR_Code_lbl.TabIndex = 6
         Me.QR_Code_lbl.Tag = " "
         Me.QR_Code_lbl.Text = "QR Code. (Celular)"
@@ -181,7 +204,7 @@ Partial Class Pix
         '
         Me.QR_Code_Pix_Pic.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.QR_Code_Pix_Pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.QR_Code_Pix_Pic.Location = New System.Drawing.Point(11, 195)
+        Me.QR_Code_Pix_Pic.Location = New System.Drawing.Point(27, 233)
         Me.QR_Code_Pix_Pic.Name = "QR_Code_Pix_Pic"
         Me.QR_Code_Pix_Pic.Size = New System.Drawing.Size(148, 148)
         Me.QR_Code_Pix_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -201,9 +224,9 @@ Partial Class Pix
         Me.Remover_btn.ForeColor = System.Drawing.Color.White
         Me.Remover_btn.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.remove_key_24px
         Me.Remover_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Remover_btn.Location = New System.Drawing.Point(12, 79)
+        Me.Remover_btn.Location = New System.Drawing.Point(10, 79)
         Me.Remover_btn.Name = "Remover_btn"
-        Me.Remover_btn.Size = New System.Drawing.Size(146, 54)
+        Me.Remover_btn.Size = New System.Drawing.Size(182, 54)
         Me.Remover_btn.TabIndex = 4
         Me.Remover_btn.Text = "Remover"
         Me.Remover_btn.UseVisualStyleBackColor = False
@@ -220,9 +243,9 @@ Partial Class Pix
         Me.Adicionar_btn.ForeColor = System.Drawing.Color.White
         Me.Adicionar_btn.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.add_key_24px
         Me.Adicionar_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Adicionar_btn.Location = New System.Drawing.Point(12, 19)
+        Me.Adicionar_btn.Location = New System.Drawing.Point(10, 19)
         Me.Adicionar_btn.Name = "Adicionar_btn"
-        Me.Adicionar_btn.Size = New System.Drawing.Size(146, 54)
+        Me.Adicionar_btn.Size = New System.Drawing.Size(182, 54)
         Me.Adicionar_btn.TabIndex = 3
         Me.Adicionar_btn.Text = "Adicionar"
         Me.Adicionar_btn.UseVisualStyleBackColor = False
@@ -236,22 +259,23 @@ Partial Class Pix
         'Panel_Principal
         '
         Me.Panel_Principal.BackColor = System.Drawing.Color.Transparent
-        Me.Panel_Principal.Controls.Add(Me.Panel1)
+        Me.Panel_Principal.Controls.Add(Me.Panel_BlockScroll)
         Me.Panel_Principal.Controls.Add(Me.ListView1)
         Me.Panel_Principal.Controls.Add(Me.Panel_Mensagem)
         Me.Panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel_Principal.Location = New System.Drawing.Point(170, 30)
+        Me.Panel_Principal.Location = New System.Drawing.Point(200, 30)
         Me.Panel_Principal.Name = "Panel_Principal"
-        Me.Panel_Principal.Size = New System.Drawing.Size(630, 470)
+        Me.Panel_Principal.Size = New System.Drawing.Size(600, 470)
         Me.Panel_Principal.TabIndex = 3
         '
-        'Panel1
+        'Panel_BlockScroll
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.Panel1.Location = New System.Drawing.Point(612, 2)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(17, 467)
-        Me.Panel1.TabIndex = 6
+        Me.Panel_BlockScroll.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.Panel_BlockScroll.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.Panel_BlockScroll.Location = New System.Drawing.Point(573, 2)
+        Me.Panel_BlockScroll.Name = "Panel_BlockScroll"
+        Me.Panel_BlockScroll.Size = New System.Drawing.Size(26, 467)
+        Me.Panel_BlockScroll.TabIndex = 6
         '
         'ListView1
         '
@@ -269,7 +293,7 @@ Partial Class Pix
         Me.ListView1.Location = New System.Drawing.Point(0, 18)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(630, 452)
+        Me.ListView1.Size = New System.Drawing.Size(600, 452)
         Me.ListView1.TabIndex = 4
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -295,7 +319,7 @@ Partial Class Pix
         '
         Me.Chave.Text = "Chave"
         Me.Chave.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.Chave.Width = 295
+        Me.Chave.Width = 265
         '
         'Panel_Mensagem
         '
@@ -303,7 +327,7 @@ Partial Class Pix
         Me.Panel_Mensagem.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel_Mensagem.Location = New System.Drawing.Point(0, 0)
         Me.Panel_Mensagem.Name = "Panel_Mensagem"
-        Me.Panel_Mensagem.Size = New System.Drawing.Size(630, 18)
+        Me.Panel_Mensagem.Size = New System.Drawing.Size(600, 18)
         Me.Panel_Mensagem.TabIndex = 5
         '
         'Mensagem_lbl
@@ -314,7 +338,7 @@ Partial Class Pix
         Me.Mensagem_lbl.ForeColor = System.Drawing.Color.Red
         Me.Mensagem_lbl.Location = New System.Drawing.Point(0, 0)
         Me.Mensagem_lbl.Name = "Mensagem_lbl"
-        Me.Mensagem_lbl.Size = New System.Drawing.Size(630, 18)
+        Me.Mensagem_lbl.Size = New System.Drawing.Size(600, 18)
         Me.Mensagem_lbl.TabIndex = 0
         Me.Mensagem_lbl.Text = "Dê 2 cliques para copiar a chave."
         Me.Mensagem_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -377,6 +401,7 @@ Partial Class Pix
     Friend WithEvents QR_Code_Banco_lbl As System.Windows.Forms.Label
     Friend WithEvents Information_Pic As System.Windows.Forms.PictureBox
     Friend WithEvents Nome As System.Windows.Forms.ColumnHeader
-    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Panel_BlockScroll As System.Windows.Forms.Panel
+    Friend WithEvents Gerar_Pagamentos_btn As System.Windows.Forms.Button
 
 End Class

@@ -1,18 +1,20 @@
 ﻿Public Class Adicionar
 
     Private CX_TEMP As ListView = New ListView
+    Dim LOCAT As Point
 
     Private Sub Adicionar_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         CarregaBordas(Adicionar_btn, 5)
+        CarregaBordas(Banco_Pic)
         CarregaBordas(Me)
-
+        Chave_Tipo_Cbx.SelectedIndex = 4
 
         For i = 0 To Bancos.Bancos.Count - 1
             CX_TEMP.Items.Add(Bancos.Bancos(i))
         Next
 
+        Call Search()
 
-        Search()
     End Sub
 
     Private Sub Close_Pic_Click(sender As System.Object, e As System.EventArgs) Handles Close_Pic.Click
@@ -29,6 +31,14 @@
             If Banco_Cbx.SelectedItem = "" Or Nome_txb.Text = "" Or Chave_Pix_txt.Text = "" Then
                 MessageBox.Show("Preencha todos os campos.", "Mensagem.", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Exit Sub
+            End If
+
+            If Chave_Tipo_Cbx.SelectedIndex = 1 Then
+                If Not Chave_Pix_txt.Text.Contains("@") Then
+                    MessageBox.Show("Preencha o E-Mail corretamente!", "Mensagem.", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    Exit Sub
+                End If
+                Chave_Pix_txt.Text = Chave_Pix_txt.Text.ToLower
             End If
 
             Insert(Banco_Cbx.SelectedItem.ToString, Nome_txb.Text, Chave_Pix_txt.Text)
@@ -61,5 +71,27 @@
 
     Private Sub Procurar_txb_TextChanged(sender As System.Object, e As System.EventArgs) Handles Procurar_txb.TextChanged
         Call Search()
+    End Sub
+
+    Private Sub Chave_Pix_txt_KeyPress(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles Chave_Pix_txt.KeyPress
+        If Chave_Tipo_Cbx.SelectedIndex = 0 Then
+            MaskCelular_KeyPress(sender, e)
+        ElseIf Chave_Tipo_Cbx.SelectedIndex = 2 Then
+            MaskCPF_KeyPress(sender, e)
+        ElseIf Chave_Tipo_Cbx.SelectedIndex = 3 Then
+            MaskCNPJ_KeyPress(sender, e)
+        End If
+    End Sub
+
+    Private Sub Adicionar_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            Locat = e.Location
+        End If
+    End Sub
+
+    Private Sub Adicionar_MouseMove(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
+        If e.Button = Windows.Forms.MouseButtons.Left Then
+            Me.Location += e.Location - locat
+        End If
     End Sub
 End Class

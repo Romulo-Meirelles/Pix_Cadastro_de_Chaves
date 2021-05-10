@@ -39,7 +39,7 @@ Public Class Information
     Private Sub Label6_Click(sender As System.Object, e As System.EventArgs) Handles Label6.Click
         Try
             Dim BTC As String = "1BZpHRGAePYE8J4sSq6v9QkBPAeVrTffgt"
-            Dim qrencod As New QRCode.Codec.QRCodeEncoder
+            Dim qrencod As New Codec.QRCodeEncoder
             Dim qrcode As Bitmap = qrencod.Encode(BTC)
             QR_Code_Pic.Image = TryCast(qrcode, Image)
             QR_Moeda_Nome_lbl.Visible = True
@@ -55,7 +55,7 @@ Public Class Information
     Private Sub Label7_Click(sender As System.Object, e As System.EventArgs) Handles Label7.Click
         Try
             Dim BTC As String = "LLkEawSYhM76B1zqHLmZTWbQHjksrwjeWx"
-            Dim qrencod As New QRCode.Codec.QRCodeEncoder
+            Dim qrencod As New Codec.QRCodeEncoder
             Dim qrcode As Bitmap = qrencod.Encode(BTC)
             QR_Code_Pic.Image = TryCast(qrcode, Image)
             QR_Moeda_Nome_lbl.Visible = True
@@ -71,7 +71,7 @@ Public Class Information
     Private Sub Label8_Click(sender As System.Object, e As System.EventArgs) Handles Label8.Click
         Try
             Dim BTC As String = "0x4454b8f08cc9d147afd93b72bf7066f10f3c2b90"
-            Dim qrencod As New QRCode.Codec.QRCodeEncoder
+            Dim qrencod As New Codec.QRCodeEncoder
             Dim qrcode As Bitmap = qrencod.Encode(BTC)
             QR_Code_Pic.Image = TryCast(qrcode, Image)
             QR_Moeda_Nome_lbl.Visible = True
@@ -87,7 +87,7 @@ Public Class Information
     Private Sub Label9_Click(sender As System.Object, e As System.EventArgs) Handles Label9.Click
         Try
             Dim BTC As String = "D8dJGkba3wL8wuNLDAm7gFSu1KYSVLHxLp"
-            Dim qrencod As New QRCode.Codec.QRCodeEncoder
+            Dim qrencod As New Codec.QRCodeEncoder
             Dim qrcode As Bitmap = qrencod.Encode(BTC)
             QR_Code_Pic.Image = TryCast(qrcode, Image)
             QR_Moeda_Nome_lbl.Visible = True
@@ -103,7 +103,7 @@ Public Class Information
     Private Sub Label10_Click(sender As System.Object, e As System.EventArgs) Handles Label10.Click
         Try
             Dim BTC As String = "767938fe-66cd-4831-9b3c-bc9760e9c835"
-            Dim qrencod As New QRCode.Codec.QRCodeEncoder
+            Dim qrencod As New Codec.QRCodeEncoder
             Dim qrcode As Bitmap = qrencod.Encode(BTC)
             QR_Code_Pic.Image = TryCast(qrcode, Image)
             QR_Moeda_Nome_lbl.Visible = True
