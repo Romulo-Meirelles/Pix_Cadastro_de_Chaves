@@ -17,7 +17,7 @@
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -56,12 +56,12 @@
     <Reference Include="EntityFramework">
       <HintPath>..\..\..\..\..\..\..\Program Files\System.Data.SQLite\2010\bin\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="MessagingToolkit.QRCode">
-      <HintPath>..\..\..\DLLs Libraries\MessagingToolkit.QRCode.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+    <Reference Include="Pix Payload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\json\Bin\Net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>bin\Debug\Pix Payload.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCode">
+      <HintPath>..\..\..\DLLs Libraries\QRCode.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -104,14 +104,16 @@
     <Compile Include="Adicionar.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Bancos.vb" />
+    <Compile Include="Bancos\Bancos.vb" />
     <Compile Include="DataBase\SQL_Lite.vb" />
-    <Compile Include="Ferramentas\API_Request.vb" />
-    <Compile Include="Ferramentas\Bordas.vb" />
-    <Compile Include="Ferramentas\ConvertToImage.vb" />
-    <Compile Include="Ferramentas\Form_Move.vb" />
     <Compile Include="Ferramentas\Mascara.vb" />
-    <Compile Include="Ferramentas\Matriz_Pix_Request.vb" />
+    <Compile Include="Ferramentas\Tools.vb" />
+    <Compile Include="Historico.Designer.vb">
+      <DependentUpon>Historico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Historico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Information.Designer.vb">
       <DependentUpon>Information.vb</DependentUpon>
     </Compile>
@@ -157,6 +159,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Adicionar.resx">
       <DependentUpon>Adicionar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Historico.resx">
+      <DependentUpon>Historico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Information.resx">
       <DependentUpon>Information.vb</DependentUpon>
@@ -232,6 +237,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\qr_code_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pix_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LTC_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BTC_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DogeCoin_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ethereum_64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\order_history_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Erase_24x24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy_24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pix_800x471png.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

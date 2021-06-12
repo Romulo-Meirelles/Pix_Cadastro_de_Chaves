@@ -30,6 +30,11 @@ Module SQL_Lite
 
         'Executa a Query Acima
         SQLcommand.ExecuteNonQuery()
+
+        SQLcommand.CommandText = "CREATE TABLE Historico (ID INTEGER PRIMARY KEY, Banco TEXT, Nome TEXT, Chave TEXT, Valor TEXT, Tipo TEXT, Servico TEXT, Cidade TEXT, Codigo TEXT, QRCode TEXT, Data TEXT);"
+        'Executa a Query Acima
+        SQLcommand.ExecuteNonQuery()
+
         SQLconnect.Cancel()
         SQLcommand.Cancel()
         SQLconnect.Close()
@@ -43,7 +48,7 @@ Module SQL_Lite
         Quantidades = 1
 
 LL:
-        If CheckExist(Quantidades) = True Then
+        If CheckExist(Quantidades, "Pix") = True Then
             Quantidades += 1
             GoTo LL
         End If
@@ -65,7 +70,7 @@ LL:
 
 
         'Cria tabela com o nome do Grupo
-        SQLcommand.CommandText = "INSERT INTO Pix (ID, Banco, Nome, Chave) values (" & "'" & ID & "'" & "," & "'" & Banco & "'" & "," & "'" & Nome & "'" & "," & "'" & Chave & "'" & ")"
+        SQLcommand.CommandText = "INSERT INTO Pix (ID, Banco, Nome, Chave) VALUES (" & "'" & ID & "'" & "," & "'" & Banco & "'" & "," & "'" & Nome & "'" & "," & "'" & Chave & "'" & ")"
 
         'Executa a Query Acima
         SQLcommand.ExecuteNonQuery()
@@ -80,7 +85,7 @@ LL:
 
     Public Sub Update(ByVal ID As Integer, ByVal Banco As String, ByVal Nome As String, ByVal Chave As String)
 
-        If CheckExist(Banco) = False Then
+        If CheckExist(Banco, "Pix") = False Then
             Exit Sub
         End If
 
@@ -111,7 +116,7 @@ LL:
 
     Public Sub Delete(ByVal ID As String)
 
-        If CheckExist(ID) = False Then
+        If CheckExist(ID, "Pix") = False Then
             Exit Sub
         End If
 
@@ -139,6 +144,7 @@ LL:
         SQLcommand.Dispose()
         
     End Sub
+
     Public Sub LoadPix(ByVal Lista As ListView)
 
         'Declara as variaveis para a conexão.
@@ -204,7 +210,7 @@ LL:
         End Try
     End Sub
 
-    Private Function CheckExist(ByVal ID As String) As Boolean
+    Private Function CheckExist(ByVal ID As String, ByVal Table As String) As Boolean
 
         Try
             'Declara as variaveis para a conexão.
@@ -218,7 +224,7 @@ LL:
 
                 With SQLCommand
                     .Connection = SQLconnect
-                    .CommandText = "SELECT * FROM Pix WHERE ID = @ID"
+                    .CommandText = "SELECT * FROM " & Table & " WHERE ID = @ID"
                     .Parameters.AddWithValue("@ID", ID)
                 End With
 
@@ -266,6 +272,7 @@ LL:
 
         Next
     End Sub
+
     Private Function LoadImagesWithSize(sz As Size) As ImageList
         Dim MyImagesIcons As New ImageList
 
@@ -278,6 +285,7 @@ LL:
         Return MyImagesIcons
 
     End Function
+
     Public Sub ColorSelect(ByVal lstV As ListView, ByVal SubItemIndex As Int16)
 
         'CONTA OS ITEMS NA LISTVIEW E VAI INDO ADICIONANDO
@@ -290,4 +298,145 @@ LL:
             ITEMCOUNT += 1
         Next
     End Sub
+
+    Public Class HistoricoDataBase
+
+        Public Sub Insert_Historico(ByVal Banco As String, ByVal Nome As String, ByVal Chave As String, ByVal Valor As String, ByVal Tipo As String, ByVal Servico As String, ByVal Cidade As String, ByVal Codigo As String, ByVal QRCode As String, ByVal Data As String)
+
+            Quantidades = 1
+
+LL:
+            If CheckExist(Quantidades, "Historico") = True Then
+                Quantidades += 1
+                GoTo LL
+            End If
+
+            Dim ID As Integer = Quantidades
+
+            'Declara as variaveis para a conexão.
+            Dim SQLconnect As New SQLiteConnection()
+            Dim SQLcommand As SQLiteCommand
+
+            'Se conecta com o banco de dados.
+            SQLconnect.ConnectionString = DataBase
+
+            'Abre a conexão com SQLite
+            SQLconnect.Open()
+            SQLcommand = SQLconnect.CreateCommand
+            SQLcommand.CommandTimeout = 5
+
+            'Cria tabela com o nome do Grupo
+            SQLcommand.CommandText = "INSERT INTO Historico (ID, Banco, Nome, Chave, Valor, Tipo, Servico, Cidade, Codigo, QRCode, Data) VALUES (" & "'" & ID & "'" & "," & "'" & Banco & "'" & "," & "'" & Nome & "'" & "," & "'" & Chave & "'" & "," & "'" & Valor & "'" & "," & "'" & Tipo & "'" & "," & "'" & Servico & "'" & "," & "'" & Cidade & "'" & "," & "'" & Codigo & "'" & "," & "'" & QRCode & "'" & "," & "'" & Data & "'" & ")"
+
+            'Executa a Query Acima
+            SQLcommand.ExecuteNonQuery()
+
+            SQLconnect.Cancel()
+            SQLcommand.Cancel()
+            SQLconnect.Close()
+            SQLconnect.Dispose()
+            SQLcommand.Dispose()
+
+        End Sub
+
+        Public Sub Load_Historico(ByVal Lista As ListView)
+
+            'Declara as variaveis para a conexão.
+            Dim SQLconnect As New SQLiteConnection()
+            Dim SQLcommand As SQLiteCommand
+
+            Try
+                'Se conecta com o banco de dados.
+                SQLconnect.ConnectionString = DataBase
+
+                'Abre a conexão com SQLite
+                SQLconnect.Open()
+
+                SQLcommand = SQLconnect.CreateCommand
+                SQLcommand.CommandTimeout = 5
+
+                Dim Query As String = "SELECT * FROM Historico"
+                Dim sadapter As New SQLiteDataAdapter
+                SQLcommand = New SQLiteCommand
+                Dim sqltable As New DataTable
+
+                Dim i As Integer
+                With SQLcommand
+                    .CommandText = Query
+                    .Connection = SQLconnect
+                End With
+
+                With sadapter
+                    .SelectCommand = SQLcommand
+                    .Fill(sqltable)
+                End With
+
+                Quantidades = 0
+                Dim GA As New ListViewGroup
+                For i = 0 To sqltable.Rows.Count - 1
+
+                    With Lista
+                        .Items.Add(sqltable.Rows(i)("ID"), 0)
+                        With .Items(.Items.Count - 1).SubItems
+                            .Add(sqltable.Rows(i)("Banco"))
+                            .Add(sqltable.Rows(i)("Nome"))
+                            .Add(sqltable.Rows(i)("Chave"))
+                            .Add(sqltable.Rows(i)("Valor"))
+                            .Add(sqltable.Rows(i)("Tipo"))
+                            .Add(sqltable.Rows(i)("Servico"))
+                            .Add(sqltable.Rows(i)("Cidade"))
+                            .Add(sqltable.Rows(i)("Codigo"))
+                            .Add(sqltable.Rows(i)("Data"))
+                            .Add(sqltable.Rows(i)("QRCode"))
+                            Quantidades += 1
+
+                        End With
+                    End With
+                Next
+
+                SQLconnect.Cancel()
+                SQLcommand.Cancel()
+                sadapter.Dispose()
+                sqltable.Dispose()
+                SQLconnect.Close()
+                SQLconnect.Dispose()
+                SQLcommand.Dispose()
+
+                INSERTICON(Lista, 1)
+                ColorSelect(Lista, 10)
+            Catch
+                SQLconnect.Close()
+                SQLconnect.Dispose()
+
+            End Try
+        End Sub
+
+        Public Sub Delete_Historico()
+
+            'Declara as variaveis para a conexão.
+            Dim SQLconnect As New SQLiteConnection()
+            Dim SQLcommand As SQLiteCommand
+
+            'Se conecta com o banco de dados.
+            SQLconnect.ConnectionString = DataBase
+
+            'Abre a conexão com SQLite
+            SQLconnect.Open()
+            SQLcommand = SQLconnect.CreateCommand
+            SQLcommand.CommandTimeout = 5
+
+            'Cria tabela com o nome do Grupo
+            SQLcommand.CommandText = "DELETE FROM Historico"
+
+            'Executa a Query Acima
+            SQLcommand.ExecuteNonQuery()
+            SQLconnect.Cancel()
+            SQLcommand.Cancel()
+            SQLconnect.Close()
+            SQLconnect.Dispose()
+            SQLcommand.Dispose()
+
+        End Sub
+
+    End Class
 End Module

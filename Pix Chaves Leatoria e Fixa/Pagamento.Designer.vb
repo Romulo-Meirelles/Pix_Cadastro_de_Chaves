@@ -24,7 +24,6 @@ Partial Class Pagamento
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pagamento))
-        Me.Close_Pic = New System.Windows.Forms.PictureBox()
         Me.Gerar_QRCode_btn = New System.Windows.Forms.Button()
         Me.Tipo_Chave_CBX = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -40,19 +39,15 @@ Partial Class Pagamento
         Me.ChavePix_txb = New System.Windows.Forms.TextBox()
         Me.Mensagem_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.Mensagem_lbl = New System.Windows.Forms.Label()
-        CType(Me.Close_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.ServProd_txb = New System.Windows.Forms.TextBox()
+        Me.Superior_Panel = New System.Windows.Forms.Panel()
+        Me.Close_btn = New System.Windows.Forms.Button()
+        Me.Title_Label = New System.Windows.Forms.Label()
+        Me.Pix_Icon_Pic = New System.Windows.Forms.PictureBox()
+        Me.Superior_Panel.SuspendLayout()
+        CType(Me.Pix_Icon_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Close_Pic
-        '
-        Me.Close_Pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Close_Pic.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Close_Pic.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Close
-        Me.Close_Pic.Location = New System.Drawing.Point(417, 8)
-        Me.Close_Pic.Name = "Close_Pic"
-        Me.Close_Pic.Size = New System.Drawing.Size(24, 24)
-        Me.Close_Pic.TabIndex = 7
-        Me.Close_Pic.TabStop = False
         '
         'Gerar_QRCode_btn
         '
@@ -67,7 +62,7 @@ Partial Class Pagamento
         Me.Gerar_QRCode_btn.ForeColor = System.Drawing.Color.White
         Me.Gerar_QRCode_btn.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.qr_code_24px
         Me.Gerar_QRCode_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Gerar_QRCode_btn.Location = New System.Drawing.Point(313, 304)
+        Me.Gerar_QRCode_btn.Location = New System.Drawing.Point(313, 355)
         Me.Gerar_QRCode_btn.Name = "Gerar_QRCode_btn"
         Me.Gerar_QRCode_btn.Size = New System.Drawing.Size(125, 34)
         Me.Gerar_QRCode_btn.TabIndex = 8
@@ -81,7 +76,7 @@ Partial Class Pagamento
         Me.Tipo_Chave_CBX.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.Tipo_Chave_CBX.FormattingEnabled = True
         Me.Tipo_Chave_CBX.Items.AddRange(New Object() {"Telefone", "Email", "CPF", "CNPJ", "Outros"})
-        Me.Tipo_Chave_CBX.Location = New System.Drawing.Point(25, 46)
+        Me.Tipo_Chave_CBX.Location = New System.Drawing.Point(25, 57)
         Me.Tipo_Chave_CBX.Name = "Tipo_Chave_CBX"
         Me.Tipo_Chave_CBX.Size = New System.Drawing.Size(224, 21)
         Me.Tipo_Chave_CBX.TabIndex = 9
@@ -90,7 +85,7 @@ Partial Class Pagamento
         '
         Me.Label1.AutoSize = True
         Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(22, 27)
+        Me.Label1.Location = New System.Drawing.Point(22, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(122, 13)
         Me.Label1.TabIndex = 10
@@ -98,7 +93,7 @@ Partial Class Pagamento
         '
         'Nome_txb
         '
-        Me.Nome_txb.Location = New System.Drawing.Point(25, 140)
+        Me.Nome_txb.Location = New System.Drawing.Point(25, 151)
         Me.Nome_txb.MaxLength = 25
         Me.Nome_txb.Name = "Nome_txb"
         Me.Nome_txb.Size = New System.Drawing.Size(172, 20)
@@ -108,7 +103,7 @@ Partial Class Pagamento
         '
         Me.Label2.AutoSize = True
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(22, 122)
+        Me.Label2.Location = New System.Drawing.Point(22, 133)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(166, 13)
         Me.Label2.TabIndex = 12
@@ -118,7 +113,7 @@ Partial Class Pagamento
         '
         Me.Label3.AutoSize = True
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(22, 168)
+        Me.Label3.Location = New System.Drawing.Point(22, 225)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(262, 13)
         Me.Label3.TabIndex = 14
@@ -126,7 +121,7 @@ Partial Class Pagamento
         '
         'Cidade_txb
         '
-        Me.Cidade_txb.Location = New System.Drawing.Point(25, 186)
+        Me.Cidade_txb.Location = New System.Drawing.Point(25, 243)
         Me.Cidade_txb.MaxLength = 15
         Me.Cidade_txb.Name = "Cidade_txb"
         Me.Cidade_txb.Size = New System.Drawing.Size(259, 20)
@@ -136,7 +131,7 @@ Partial Class Pagamento
         '
         Me.Label4.AutoSize = True
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(22, 215)
+        Me.Label4.Location = New System.Drawing.Point(22, 272)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(173, 13)
         Me.Label4.TabIndex = 16
@@ -144,7 +139,7 @@ Partial Class Pagamento
         '
         'Valor_txb
         '
-        Me.Valor_txb.Location = New System.Drawing.Point(25, 233)
+        Me.Valor_txb.Location = New System.Drawing.Point(25, 290)
         Me.Valor_txb.MaxLength = 15
         Me.Valor_txb.Name = "Valor_txb"
         Me.Valor_txb.Size = New System.Drawing.Size(136, 20)
@@ -154,7 +149,7 @@ Partial Class Pagamento
         '
         Me.Label5.AutoSize = True
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(22, 263)
+        Me.Label5.Location = New System.Drawing.Point(22, 320)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(288, 13)
         Me.Label5.TabIndex = 18
@@ -162,7 +157,7 @@ Partial Class Pagamento
         '
         'Codigo_txb
         '
-        Me.Codigo_txb.Location = New System.Drawing.Point(25, 282)
+        Me.Codigo_txb.Location = New System.Drawing.Point(25, 339)
         Me.Codigo_txb.MaxLength = 20
         Me.Codigo_txb.Name = "Codigo_txb"
         Me.Codigo_txb.Size = New System.Drawing.Size(136, 20)
@@ -172,7 +167,7 @@ Partial Class Pagamento
         '
         Me.Label6.AutoSize = True
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(22, 75)
+        Me.Label6.Location = New System.Drawing.Point(22, 86)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(58, 13)
         Me.Label6.TabIndex = 20
@@ -180,7 +175,7 @@ Partial Class Pagamento
         '
         'ChavePix_txb
         '
-        Me.ChavePix_txb.Location = New System.Drawing.Point(25, 93)
+        Me.ChavePix_txb.Location = New System.Drawing.Point(25, 104)
         Me.ChavePix_txb.MaxLength = 59
         Me.ChavePix_txb.Name = "ChavePix_txb"
         Me.ChavePix_txb.Size = New System.Drawing.Size(172, 20)
@@ -193,7 +188,7 @@ Partial Class Pagamento
         'Mensagem_lbl
         '
         Me.Mensagem_lbl.ForeColor = System.Drawing.Color.Red
-        Me.Mensagem_lbl.Location = New System.Drawing.Point(22, 314)
+        Me.Mensagem_lbl.Location = New System.Drawing.Point(22, 365)
         Me.Mensagem_lbl.Name = "Mensagem_lbl"
         Me.Mensagem_lbl.Size = New System.Drawing.Size(262, 23)
         Me.Mensagem_lbl.TabIndex = 21
@@ -201,13 +196,81 @@ Partial Class Pagamento
         Me.Mensagem_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Mensagem_lbl.Visible = False
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.ForeColor = System.Drawing.Color.White
+        Me.Label7.Location = New System.Drawing.Point(22, 179)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(203, 13)
+        Me.Label7.TabIndex = 23
+        Me.Label7.Text = "Serviços ou Produtos Nomes. (25 Letras):"
+        '
+        'ServProd_txb
+        '
+        Me.ServProd_txb.Location = New System.Drawing.Point(25, 197)
+        Me.ServProd_txb.MaxLength = 25
+        Me.ServProd_txb.Name = "ServProd_txb"
+        Me.ServProd_txb.Size = New System.Drawing.Size(172, 20)
+        Me.ServProd_txb.TabIndex = 22
+        '
+        'Superior_Panel
+        '
+        Me.Superior_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Superior_Panel.Controls.Add(Me.Close_btn)
+        Me.Superior_Panel.Controls.Add(Me.Title_Label)
+        Me.Superior_Panel.Controls.Add(Me.Pix_Icon_Pic)
+        Me.Superior_Panel.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Superior_Panel.Location = New System.Drawing.Point(0, 0)
+        Me.Superior_Panel.Name = "Superior_Panel"
+        Me.Superior_Panel.Size = New System.Drawing.Size(450, 30)
+        Me.Superior_Panel.TabIndex = 24
+        '
+        'Close_btn
+        '
+        Me.Close_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Close_btn.BackgroundImage = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Close
+        Me.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Close_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Close_btn.FlatAppearance.BorderSize = 0
+        Me.Close_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.Close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Close_btn.Location = New System.Drawing.Point(420, 4)
+        Me.Close_btn.Name = "Close_btn"
+        Me.Close_btn.Size = New System.Drawing.Size(24, 24)
+        Me.Close_btn.TabIndex = 5
+        Me.Close_btn.UseVisualStyleBackColor = True
+        '
+        'Title_Label
+        '
+        Me.Title_Label.AutoSize = True
+        Me.Title_Label.Font = New System.Drawing.Font("MS Reference Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Title_Label.ForeColor = System.Drawing.Color.White
+        Me.Title_Label.Location = New System.Drawing.Point(42, 8)
+        Me.Title_Label.Name = "Title_Label"
+        Me.Title_Label.Size = New System.Drawing.Size(163, 15)
+        Me.Title_Label.TabIndex = 3
+        Me.Title_Label.Text = "Gerar Pagamento QRCode."
+        '
+        'Pix_Icon_Pic
+        '
+        Me.Pix_Icon_Pic.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_24x24
+        Me.Pix_Icon_Pic.Location = New System.Drawing.Point(9, 3)
+        Me.Pix_Icon_Pic.Name = "Pix_Icon_Pic"
+        Me.Pix_Icon_Pic.Size = New System.Drawing.Size(24, 24)
+        Me.Pix_Icon_Pic.TabIndex = 0
+        Me.Pix_Icon_Pic.TabStop = False
+        '
         'Pagamento
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer), CType(CType(23, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(450, 350)
+        Me.ClientSize = New System.Drawing.Size(450, 400)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Superior_Panel)
+        Me.Controls.Add(Me.Label7)
+        Me.Controls.Add(Me.ServProd_txb)
         Me.Controls.Add(Me.Mensagem_lbl)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ChavePix_txb)
@@ -222,7 +285,6 @@ Partial Class Pagamento
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Tipo_Chave_CBX)
         Me.Controls.Add(Me.Gerar_QRCode_btn)
-        Me.Controls.Add(Me.Close_Pic)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
@@ -230,12 +292,14 @@ Partial Class Pagamento
         Me.Name = "Pagamento"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Gerar QRCode"
-        CType(Me.Close_Pic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TopMost = True
+        Me.Superior_Panel.ResumeLayout(False)
+        Me.Superior_Panel.PerformLayout()
+        CType(Me.Pix_Icon_Pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Close_Pic As System.Windows.Forms.PictureBox
     Friend WithEvents Gerar_QRCode_btn As System.Windows.Forms.Button
     Friend WithEvents Tipo_Chave_CBX As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -251,4 +315,10 @@ Partial Class Pagamento
     Friend WithEvents ChavePix_txb As System.Windows.Forms.TextBox
     Protected WithEvents Mensagem_Timer As System.Windows.Forms.Timer
     Friend WithEvents Mensagem_lbl As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents ServProd_txb As System.Windows.Forms.TextBox
+    Friend WithEvents Superior_Panel As System.Windows.Forms.Panel
+    Friend WithEvents Close_btn As System.Windows.Forms.Button
+    Friend WithEvents Title_Label As System.Windows.Forms.Label
+    Friend WithEvents Pix_Icon_Pic As System.Windows.Forms.PictureBox
 End Class

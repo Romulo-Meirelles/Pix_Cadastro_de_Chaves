@@ -25,16 +25,15 @@ Partial Class Pix
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Pix))
         Me.Superior_Panel = New System.Windows.Forms.Panel()
+        Me.Minimize_btn = New System.Windows.Forms.Button()
+        Me.Close_btn = New System.Windows.Forms.Button()
         Me.Title_Label = New System.Windows.Forms.Label()
-        Me.Minimize_Pic = New System.Windows.Forms.PictureBox()
-        Me.Close_Pic = New System.Windows.Forms.PictureBox()
         Me.Pix_Icon_Pic = New System.Windows.Forms.PictureBox()
         Me.Lateral_Panel = New System.Windows.Forms.Panel()
+        Me.Historico_btn = New System.Windows.Forms.Button()
         Me.Gerar_Pagamentos_btn = New System.Windows.Forms.Button()
         Me.Information_Pic = New System.Windows.Forms.PictureBox()
-        Me.QR_Code_Banco_lbl = New System.Windows.Forms.Label()
         Me.Version_lbl = New System.Windows.Forms.Label()
-        Me.QR_Code_lbl = New System.Windows.Forms.Label()
         Me.QR_Code_Pix_Pic = New System.Windows.Forms.PictureBox()
         Me.Remover_btn = New System.Windows.Forms.Button()
         Me.Adicionar_btn = New System.Windows.Forms.Button()
@@ -49,29 +48,64 @@ Partial Class Pix
         Me.Panel_Mensagem = New System.Windows.Forms.Panel()
         Me.Mensagem_lbl = New System.Windows.Forms.Label()
         Me.Timer_Mensagem = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Data_lbl = New System.Windows.Forms.Label()
+        Me.Chave_lbl = New System.Windows.Forms.Label()
+        Me.Nome_lbl = New System.Windows.Forms.Label()
+        Me.Banco_lbl = New System.Windows.Forms.Label()
+        Me.ID_lbl = New System.Windows.Forms.Label()
+        Me.QR_Code_Banco_lbl = New System.Windows.Forms.Label()
         Me.Superior_Panel.SuspendLayout()
-        CType(Me.Minimize_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Close_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Pix_Icon_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Lateral_Panel.SuspendLayout()
         CType(Me.Information_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.QR_Code_Pix_Pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_Principal.SuspendLayout()
         Me.Panel_Mensagem.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Superior_Panel
         '
         Me.Superior_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Superior_Panel.Controls.Add(Me.Minimize_btn)
+        Me.Superior_Panel.Controls.Add(Me.Close_btn)
         Me.Superior_Panel.Controls.Add(Me.Title_Label)
-        Me.Superior_Panel.Controls.Add(Me.Minimize_Pic)
-        Me.Superior_Panel.Controls.Add(Me.Close_Pic)
         Me.Superior_Panel.Controls.Add(Me.Pix_Icon_Pic)
         Me.Superior_Panel.Dock = System.Windows.Forms.DockStyle.Top
         Me.Superior_Panel.Location = New System.Drawing.Point(0, 0)
         Me.Superior_Panel.Name = "Superior_Panel"
         Me.Superior_Panel.Size = New System.Drawing.Size(800, 30)
         Me.Superior_Panel.TabIndex = 0
+        '
+        'Minimize_btn
+        '
+        Me.Minimize_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Minimize_btn.BackgroundImage = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Minimize
+        Me.Minimize_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Minimize_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Minimize_btn.FlatAppearance.BorderSize = 0
+        Me.Minimize_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Minimize_btn.Location = New System.Drawing.Point(740, 4)
+        Me.Minimize_btn.Name = "Minimize_btn"
+        Me.Minimize_btn.Size = New System.Drawing.Size(24, 24)
+        Me.Minimize_btn.TabIndex = 5
+        Me.Minimize_btn.UseVisualStyleBackColor = True
+        '
+        'Close_btn
+        '
+        Me.Close_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Close_btn.BackgroundImage = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Close
+        Me.Close_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.Close_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Close_btn.FlatAppearance.BorderSize = 0
+        Me.Close_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red
+        Me.Close_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Close_btn.Location = New System.Drawing.Point(769, 4)
+        Me.Close_btn.Name = "Close_btn"
+        Me.Close_btn.Size = New System.Drawing.Size(24, 24)
+        Me.Close_btn.TabIndex = 4
+        Me.Close_btn.UseVisualStyleBackColor = True
         '
         'Title_Label
         '
@@ -83,28 +117,6 @@ Partial Class Pix
         Me.Title_Label.Size = New System.Drawing.Size(298, 15)
         Me.Title_Label.TabIndex = 3
         Me.Title_Label.Text = "Pix Chaves Leatórias e Fixa - By Romulo Meirelles."
-        '
-        'Minimize_Pic
-        '
-        Me.Minimize_Pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Minimize_Pic.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Minimize_Pic.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Minimize
-        Me.Minimize_Pic.Location = New System.Drawing.Point(744, 3)
-        Me.Minimize_Pic.Name = "Minimize_Pic"
-        Me.Minimize_Pic.Size = New System.Drawing.Size(24, 24)
-        Me.Minimize_Pic.TabIndex = 2
-        Me.Minimize_Pic.TabStop = False
-        '
-        'Close_Pic
-        '
-        Me.Close_Pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Close_Pic.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Close_Pic.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Close
-        Me.Close_Pic.Location = New System.Drawing.Point(771, 3)
-        Me.Close_Pic.Name = "Close_Pic"
-        Me.Close_Pic.Size = New System.Drawing.Size(24, 24)
-        Me.Close_Pic.TabIndex = 1
-        Me.Close_Pic.TabStop = False
         '
         'Pix_Icon_Pic
         '
@@ -118,11 +130,11 @@ Partial Class Pix
         'Lateral_Panel
         '
         Me.Lateral_Panel.BackColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(16, Byte), Integer))
+        Me.Lateral_Panel.Controls.Add(Me.Historico_btn)
         Me.Lateral_Panel.Controls.Add(Me.Gerar_Pagamentos_btn)
         Me.Lateral_Panel.Controls.Add(Me.Information_Pic)
         Me.Lateral_Panel.Controls.Add(Me.QR_Code_Banco_lbl)
         Me.Lateral_Panel.Controls.Add(Me.Version_lbl)
-        Me.Lateral_Panel.Controls.Add(Me.QR_Code_lbl)
         Me.Lateral_Panel.Controls.Add(Me.QR_Code_Pix_Pic)
         Me.Lateral_Panel.Controls.Add(Me.Remover_btn)
         Me.Lateral_Panel.Controls.Add(Me.Adicionar_btn)
@@ -131,6 +143,25 @@ Partial Class Pix
         Me.Lateral_Panel.Name = "Lateral_Panel"
         Me.Lateral_Panel.Size = New System.Drawing.Size(200, 470)
         Me.Lateral_Panel.TabIndex = 1
+        '
+        'Historico_btn
+        '
+        Me.Historico_btn.BackColor = System.Drawing.Color.Indigo
+        Me.Historico_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Historico_btn.FlatAppearance.BorderSize = 0
+        Me.Historico_btn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Green
+        Me.Historico_btn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Historico_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Historico_btn.Font = New System.Drawing.Font("MS Reference Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Historico_btn.ForeColor = System.Drawing.Color.White
+        Me.Historico_btn.Image = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.order_history_24x24
+        Me.Historico_btn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Historico_btn.Location = New System.Drawing.Point(9, 199)
+        Me.Historico_btn.Name = "Historico_btn"
+        Me.Historico_btn.Size = New System.Drawing.Size(182, 54)
+        Me.Historico_btn.TabIndex = 11
+        Me.Historico_btn.Text = "Histórico"
+        Me.Historico_btn.UseVisualStyleBackColor = False
         '
         'Gerar_Pagamentos_btn
         '
@@ -161,20 +192,6 @@ Partial Class Pix
         Me.Information_Pic.TabIndex = 9
         Me.Information_Pic.TabStop = False
         '
-        'QR_Code_Banco_lbl
-        '
-        Me.QR_Code_Banco_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.QR_Code_Banco_lbl.Font = New System.Drawing.Font("Papyrus", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QR_Code_Banco_lbl.ForeColor = System.Drawing.Color.SpringGreen
-        Me.QR_Code_Banco_lbl.Location = New System.Drawing.Point(27, 395)
-        Me.QR_Code_Banco_lbl.Name = "QR_Code_Banco_lbl"
-        Me.QR_Code_Banco_lbl.Size = New System.Drawing.Size(148, 27)
-        Me.QR_Code_Banco_lbl.TabIndex = 8
-        Me.QR_Code_Banco_lbl.Tag = " "
-        Me.QR_Code_Banco_lbl.Text = "Banco:"
-        Me.QR_Code_Banco_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.QR_Code_Banco_lbl.Visible = False
-        '
         'Version_lbl
         '
         Me.Version_lbl.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -186,27 +203,13 @@ Partial Class Pix
         Me.Version_lbl.TabIndex = 7
         Me.Version_lbl.Text = "Version: 0.0.0.0"
         '
-        'QR_Code_lbl
-        '
-        Me.QR_Code_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.QR_Code_lbl.AutoSize = True
-        Me.QR_Code_lbl.Font = New System.Drawing.Font("Papyrus", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QR_Code_lbl.ForeColor = System.Drawing.Color.MediumTurquoise
-        Me.QR_Code_lbl.Location = New System.Drawing.Point(31, 211)
-        Me.QR_Code_lbl.Name = "QR_Code_lbl"
-        Me.QR_Code_lbl.Size = New System.Drawing.Size(143, 19)
-        Me.QR_Code_lbl.TabIndex = 6
-        Me.QR_Code_lbl.Tag = " "
-        Me.QR_Code_lbl.Text = "QR Code. (Celular)"
-        Me.QR_Code_lbl.Visible = False
-        '
         'QR_Code_Pix_Pic
         '
         Me.QR_Code_Pix_Pic.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.QR_Code_Pix_Pic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.QR_Code_Pix_Pic.Location = New System.Drawing.Point(27, 233)
+        Me.QR_Code_Pix_Pic.Location = New System.Drawing.Point(45, 281)
         Me.QR_Code_Pix_Pic.Name = "QR_Code_Pix_Pic"
-        Me.QR_Code_Pix_Pic.Size = New System.Drawing.Size(148, 148)
+        Me.QR_Code_Pix_Pic.Size = New System.Drawing.Size(100, 100)
         Me.QR_Code_Pix_Pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.QR_Code_Pix_Pic.TabIndex = 5
         Me.QR_Code_Pix_Pic.TabStop = False
@@ -259,8 +262,9 @@ Partial Class Pix
         'Panel_Principal
         '
         Me.Panel_Principal.BackColor = System.Drawing.Color.Transparent
-        Me.Panel_Principal.Controls.Add(Me.Panel_BlockScroll)
         Me.Panel_Principal.Controls.Add(Me.ListView1)
+        Me.Panel_Principal.Controls.Add(Me.Panel1)
+        Me.Panel_Principal.Controls.Add(Me.Panel_BlockScroll)
         Me.Panel_Principal.Controls.Add(Me.Panel_Mensagem)
         Me.Panel_Principal.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel_Principal.Location = New System.Drawing.Point(200, 30)
@@ -280,6 +284,7 @@ Partial Class Pix
         'ListView1
         '
         Me.ListView1.Activation = System.Windows.Forms.ItemActivation.TwoClick
+        Me.ListView1.AllowColumnReorder = True
         Me.ListView1.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(23, Byte), Integer))
         Me.ListView1.BackgroundImage = Global.Pix_Chaves_Leatoria_e_Fixa.My.Resources.Resources.Pix_630x452
         Me.ListView1.BackgroundImageTiled = True
@@ -290,10 +295,11 @@ Partial Class Pix
         Me.ListView1.ForeColor = System.Drawing.Color.White
         Me.ListView1.FullRowSelect = True
         Me.ListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None
-        Me.ListView1.Location = New System.Drawing.Point(0, 18)
+        Me.ListView1.HideSelection = False
+        Me.ListView1.Location = New System.Drawing.Point(0, 48)
         Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(600, 452)
+        Me.ListView1.Size = New System.Drawing.Size(600, 422)
         Me.ListView1.TabIndex = 4
         Me.ListView1.UseCompatibleStateImageBehavior = False
         Me.ListView1.View = System.Windows.Forms.View.Details
@@ -347,6 +353,84 @@ Partial Class Pix
         '
         Me.Timer_Mensagem.Interval = 3000
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(8, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(23, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Data_lbl)
+        Me.Panel1.Controls.Add(Me.Chave_lbl)
+        Me.Panel1.Controls.Add(Me.Nome_lbl)
+        Me.Panel1.Controls.Add(Me.Banco_lbl)
+        Me.Panel1.Controls.Add(Me.ID_lbl)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 18)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(600, 30)
+        Me.Panel1.TabIndex = 8
+        '
+        'Data_lbl
+        '
+        Me.Data_lbl.AutoSize = True
+        Me.Data_lbl.ForeColor = System.Drawing.Color.Turquoise
+        Me.Data_lbl.Location = New System.Drawing.Point(621, 8)
+        Me.Data_lbl.Name = "Data_lbl"
+        Me.Data_lbl.Size = New System.Drawing.Size(30, 13)
+        Me.Data_lbl.TabIndex = 9
+        Me.Data_lbl.Text = "Data"
+        '
+        'Chave_lbl
+        '
+        Me.Chave_lbl.AutoSize = True
+        Me.Chave_lbl.ForeColor = System.Drawing.Color.Turquoise
+        Me.Chave_lbl.Location = New System.Drawing.Point(429, 8)
+        Me.Chave_lbl.Name = "Chave_lbl"
+        Me.Chave_lbl.Size = New System.Drawing.Size(38, 13)
+        Me.Chave_lbl.TabIndex = 3
+        Me.Chave_lbl.Text = "Chave"
+        '
+        'Nome_lbl
+        '
+        Me.Nome_lbl.AutoSize = True
+        Me.Nome_lbl.ForeColor = System.Drawing.Color.Turquoise
+        Me.Nome_lbl.Location = New System.Drawing.Point(225, 8)
+        Me.Nome_lbl.Name = "Nome_lbl"
+        Me.Nome_lbl.Size = New System.Drawing.Size(35, 13)
+        Me.Nome_lbl.TabIndex = 2
+        Me.Nome_lbl.Text = "Nome"
+        '
+        'Banco_lbl
+        '
+        Me.Banco_lbl.AutoSize = True
+        Me.Banco_lbl.ForeColor = System.Drawing.Color.Turquoise
+        Me.Banco_lbl.Location = New System.Drawing.Point(101, 8)
+        Me.Banco_lbl.Name = "Banco_lbl"
+        Me.Banco_lbl.Size = New System.Drawing.Size(38, 13)
+        Me.Banco_lbl.TabIndex = 1
+        Me.Banco_lbl.Text = "Banco"
+        '
+        'ID_lbl
+        '
+        Me.ID_lbl.AutoSize = True
+        Me.ID_lbl.ForeColor = System.Drawing.Color.Turquoise
+        Me.ID_lbl.Location = New System.Drawing.Point(3, 8)
+        Me.ID_lbl.Name = "ID_lbl"
+        Me.ID_lbl.Size = New System.Drawing.Size(18, 13)
+        Me.ID_lbl.TabIndex = 0
+        Me.ID_lbl.Text = "ID"
+        '
+        'QR_Code_Banco_lbl
+        '
+        Me.QR_Code_Banco_lbl.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.QR_Code_Banco_lbl.Font = New System.Drawing.Font("Papyrus", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.QR_Code_Banco_lbl.ForeColor = System.Drawing.Color.SpringGreen
+        Me.QR_Code_Banco_lbl.Location = New System.Drawing.Point(10, 387)
+        Me.QR_Code_Banco_lbl.Name = "QR_Code_Banco_lbl"
+        Me.QR_Code_Banco_lbl.Size = New System.Drawing.Size(181, 27)
+        Me.QR_Code_Banco_lbl.TabIndex = 8
+        Me.QR_Code_Banco_lbl.Tag = " "
+        Me.QR_Code_Banco_lbl.Text = "Banco:"
+        Me.QR_Code_Banco_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.QR_Code_Banco_lbl.Visible = False
+        '
         'Pix
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -366,8 +450,6 @@ Partial Class Pix
         Me.Text = "Pix Chaves - By Romulo Meirelles."
         Me.Superior_Panel.ResumeLayout(False)
         Me.Superior_Panel.PerformLayout()
-        CType(Me.Minimize_Pic, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Close_Pic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Pix_Icon_Pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Lateral_Panel.ResumeLayout(False)
         Me.Lateral_Panel.PerformLayout()
@@ -375,15 +457,15 @@ Partial Class Pix
         CType(Me.QR_Code_Pix_Pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_Principal.ResumeLayout(False)
         Me.Panel_Mensagem.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents Superior_Panel As System.Windows.Forms.Panel
     Friend WithEvents Lateral_Panel As System.Windows.Forms.Panel
     Friend WithEvents Pix_Icon_Pic As System.Windows.Forms.PictureBox
-    Friend WithEvents Close_Pic As System.Windows.Forms.PictureBox
     Friend WithEvents Title_Label As System.Windows.Forms.Label
-    Friend WithEvents Minimize_Pic As System.Windows.Forms.PictureBox
     Friend WithEvents NotifyIcon1 As System.Windows.Forms.NotifyIcon
     Friend WithEvents Adicionar_btn As System.Windows.Forms.Button
     Friend WithEvents Remover_btn As System.Windows.Forms.Button
@@ -396,12 +478,20 @@ Partial Class Pix
     Friend WithEvents Mensagem_lbl As System.Windows.Forms.Label
     Friend WithEvents Timer_Mensagem As System.Windows.Forms.Timer
     Friend WithEvents QR_Code_Pix_Pic As System.Windows.Forms.PictureBox
-    Friend WithEvents QR_Code_lbl As System.Windows.Forms.Label
     Friend WithEvents Version_lbl As System.Windows.Forms.Label
-    Friend WithEvents QR_Code_Banco_lbl As System.Windows.Forms.Label
     Friend WithEvents Information_Pic As System.Windows.Forms.PictureBox
     Friend WithEvents Nome As System.Windows.Forms.ColumnHeader
     Friend WithEvents Panel_BlockScroll As System.Windows.Forms.Panel
     Friend WithEvents Gerar_Pagamentos_btn As System.Windows.Forms.Button
+    Friend WithEvents Historico_btn As System.Windows.Forms.Button
+    Friend WithEvents Close_btn As System.Windows.Forms.Button
+    Friend WithEvents Minimize_btn As System.Windows.Forms.Button
+    Friend WithEvents QR_Code_Banco_lbl As System.Windows.Forms.Label
+    Friend WithEvents Panel1 As System.Windows.Forms.Panel
+    Friend WithEvents Data_lbl As System.Windows.Forms.Label
+    Friend WithEvents Chave_lbl As System.Windows.Forms.Label
+    Friend WithEvents Nome_lbl As System.Windows.Forms.Label
+    Friend WithEvents Banco_lbl As System.Windows.Forms.Label
+    Friend WithEvents ID_lbl As System.Windows.Forms.Label
 
 End Class

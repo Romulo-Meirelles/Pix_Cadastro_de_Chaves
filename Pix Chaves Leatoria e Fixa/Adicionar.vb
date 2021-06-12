@@ -5,6 +5,7 @@
 
     Private Sub Adicionar_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         CarregaBordas(Adicionar_btn, 5)
+        CarregaBordas(Close_btn, 5)
         CarregaBordas(Banco_Pic)
         CarregaBordas(Me)
         Chave_Tipo_Cbx.SelectedIndex = 4
@@ -15,15 +16,6 @@
 
         Call Search()
 
-    End Sub
-
-    Private Sub Close_Pic_Click(sender As System.Object, e As System.EventArgs) Handles Close_Pic.Click
-        Try
-            Me.DialogResult = Windows.Forms.DialogResult.Abort
-            Me.Close()
-        Catch ex As Exception
-
-        End Try
     End Sub
 
     Private Sub Adicionar_btn_Click(sender As System.Object, e As System.EventArgs) Handles Adicionar_btn.Click
@@ -84,14 +76,41 @@
     End Sub
 
     Private Sub Adicionar_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseDown
-        If e.Button = Windows.Forms.MouseButtons.Left Then
-            Locat = e.Location
-        End If
+        Tools.MouseDown(sender, e)
     End Sub
 
     Private Sub Adicionar_MouseMove(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Me.MouseMove
-        If e.Button = Windows.Forms.MouseButtons.Left Then
-            Me.Location += e.Location - locat
-        End If
+        Tools.MouseMove(sender, e, Me)
+    End Sub
+
+    Private Sub Close_btn_Click(sender As System.Object, e As System.EventArgs) Handles Close_btn.Click
+        Try
+            Me.Close()
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub Superior_Panel_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Superior_Panel.MouseDown
+        Tools.MouseDown(sender, e)
+    End Sub
+
+    Private Sub Superior_Panel_MouseMove(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Superior_Panel.MouseMove
+        Tools.MouseMove(sender, e, Me)
+    End Sub
+
+    Private Sub Title_Label_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Title_Label.MouseDown
+        Tools.MouseDown(sender, e)
+    End Sub
+
+    Private Sub Title_Label_MouseMove(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Title_Label.MouseMove
+        Tools.MouseMove(sender, e, Me)
+    End Sub
+
+    Private Sub Pix_Icon_Pic_MouseDown(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Pix_Icon_Pic.MouseDown
+        Tools.MouseDown(sender, e)
+    End Sub
+
+    Private Sub Pix_Icon_Pic_MouseMove(sender As Object, e As System.Windows.Forms.MouseEventArgs) Handles Pix_Icon_Pic.MouseMove
+        Tools.MouseMove(sender, e, Me)
     End Sub
 End Class
