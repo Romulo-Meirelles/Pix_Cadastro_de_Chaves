@@ -1,4 +1,4 @@
-#  <a href="https://github.com/Romulo-Meirelles"><img src="/Images/PIX_LOGO_64x64.png">  Pix Cadastro de Chaves Fixas e Aleatórias.
+#  <a href="https://github.com/Romulo-Meirelles"><img src="/Images/PIX_LOGO_64x64.png">  Pix Cadastro de Chaves Fixas e Aleatórias. (Não Oficial)
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/Romulo-Meirelles) <br>
 Guarde suas chaves PIX em seu computador. Sem precisar ficar abrindo os APP de bancos para ver-las.
 
